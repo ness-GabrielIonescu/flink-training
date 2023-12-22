@@ -88,7 +88,7 @@ public class HourlyTipsExercise {
                     public void process(Long key, ProcessWindowFunction<TaxiFare, Tuple3<Long, Long, Float>,
                             Long, TimeWindow>.Context context, Iterable<TaxiFare> faresInWindow,
                                         Collector<Tuple3<Long, Long, Float>> collector) {
-                        Float sumOfTipsInWindow = 0f;
+                        float sumOfTipsInWindow = 0f;
                         for (TaxiFare fareInWindow : faresInWindow) {
                             sumOfTipsInWindow += fareInWindow.tip;
                         }

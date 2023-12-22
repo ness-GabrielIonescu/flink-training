@@ -112,7 +112,7 @@ public class RidesAndFaresExercise {
         @Override
         public void flatMap1(TaxiRide ride, Collector<RideAndFare> out) throws Exception {
             TaxiFare taxiFareInState = taxiFareValueState.value();
-            if(taxiFareInState != null) {
+            if (taxiFareInState != null) {
                 taxiRideValueState.clear();
                 taxiFareValueState.clear();
                 out.collect(new RideAndFare(ride, taxiFareInState));
@@ -124,7 +124,7 @@ public class RidesAndFaresExercise {
         @Override
         public void flatMap2(TaxiFare fare, Collector<RideAndFare> out) throws Exception {
             TaxiRide taxiRideInState = taxiRideValueState.value();
-            if(taxiRideInState != null) {
+            if (taxiRideInState != null) {
                 taxiRideValueState.clear();
                 taxiFareValueState.clear();
                 out.collect(new RideAndFare(taxiRideInState, fare));
